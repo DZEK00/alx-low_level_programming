@@ -7,7 +7,7 @@
 int main(void)
 {
 	char Hexa[] = "abcdef";
-	char Deci[] = "123456789";
+	char Deci[] = "0123456789";
 	int i;
 	int j;
 
