@@ -9,7 +9,7 @@ int main(void)
 	char revAlpha[] = "abcdefghijklmnopqrstuvwxyz";
 	int i;
 
-	for (i = 26; i >= 0; i--)
+	for (i = 25; i >= 0; i--)
 	{
 		putchar(revAlpha[i]);
 	}
