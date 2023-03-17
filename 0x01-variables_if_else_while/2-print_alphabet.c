@@ -1,15 +1,19 @@
 #include <stdio.h>
+
 /**
- * main - Entry point
+ * main - Prints the alphabet.
  *
  * Return: Always 0 (Success)
  */
 int main(void)
 {
-for(int i = 0; i < 26; i++)
+     char alphabet[26] = "abcdefghijklmnopqrstuvwxyz";
+     int i;
+
+for (i = 0; i < 26; i++)
 {
-putchar(97 + i);
+	putchar(alphabet[i]);
 }
-putchar('\n');
+	putchar('\n');
 return (0);
 }
