@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * print_sign - function to check the 
- * sign of a character
+ * print_sign - function to check the sign
+ * of a number
  *
  * @n: checks input of function
  *
