@@ -1,6 +1,8 @@
 #include "main.h"
-/* printf_alphabet - this function uses _putchar function to print the alphabet
- **/
+/** 
+ * printf_alphabet - this function uses _putchar function 
+ * to print the alphabet
+ */
 void print_alphabet(void)
 {
 	int alpha;
