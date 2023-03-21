@@ -6,7 +6,8 @@
  *
  * @n: takes in integer type input
  *
- * return - always 0 (success)
+ * return - -n if the integer is less than 0 and
+ * n if the integer is greater than 0
  */
 
 int _abs(int n)
