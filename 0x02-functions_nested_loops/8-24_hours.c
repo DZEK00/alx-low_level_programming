@@ -1,7 +1,8 @@
 #include "main.h"
 
 /**
- * print_last_digit - function that prints every minute of the day of Jack Bauer
+ * print_last_digit - function that prints every minute
+ * of the day of Jack Bauer
  *
  * Return: Always 0 (Success)
  */
