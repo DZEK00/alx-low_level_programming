@@ -9,7 +9,7 @@
 
 void print_diagonal(int n)
 {
-	int column, space;
+	int column, i;
 
 	if (n <= 0)
 		_putchar('\n');
@@ -17,9 +17,13 @@ void print_diagonal(int n)
 	{
 		for (column = 1; column <= n; column++)
 		{
-			for (space = 1; space <= column; space++)
-				_putchar(' ');
-			_putchar(92);
+			for (i = 1; i <= column; i++)
+			{
+				if (i == column)
+					_putchar(92);
+				else if (i < column)
+					_putchar(' ');
+			}
 			_putchar('\n');
 		}
 	}
