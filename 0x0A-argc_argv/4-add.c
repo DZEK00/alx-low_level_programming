@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 
 	if (argc == 1)
 	{
- 		printf("0\n");
+		printf("0\n");
 		return (0);
 	}
 
@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 	{
 		arg = argv[i];
 		for (j = 0; arg[j] != '\0'; j++)
-		{ 
+		{
 			if (!isdigit(arg[j]))
 			{
 				printf("Error\n");
