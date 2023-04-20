@@ -16,19 +16,17 @@ void print_all(const char * const format, ...)
 	const char arg_symbol[] = "cifs";
 
 	va_start(list, format);
-
 	while (format && format[i])
 	{
 		j = 0;
 		while (arg_symbol[j])
 		{
-			if(format[i] == arg_symbol[j] && k)
+			if (format[i] == arg_symbol[j] && k)
 			{
 				printf(", ");
 				break;
 			} j++;
 		}
-
 		switch (format[i])
 		{
 		case 'c':
@@ -51,6 +49,5 @@ void print_all(const char * const format, ...)
 			break;
 		} i++;
 	}
-	va_end(list);
-	printf("\n");
+	va_end(list), printf("\n");
 }
