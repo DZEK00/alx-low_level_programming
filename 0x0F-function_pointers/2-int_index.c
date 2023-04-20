@@ -6,6 +6,8 @@
 * @array: input
 * @size: input
 * @cmp: function pointer
+*
+* Return: Alway 0
 */
 
 int int_index(int *array, int size, int (*cmp)(int))
