@@ -3,97 +3,54 @@
 #include <stdarg.h>
 
 /**
- * print_char - print a char
- *
- * @list: a list of args
- */
-
-void print_char(va_list list)
-{
-	char c = va_arg(list, int);
-
-	printf("%c", c);
-}
-
-/**
- * print_int - print an integer
- *
- * @list: a list of args
- */
-
-void print_int(va_list list)
-{
-	int n = va_arg(list, int);
-
-	printf("%d", n);
-}
-
-/**
- * print_float - print a float
- *
- * @list: a list of args
- */
-
-void print_float(va_list list)
-{
-	float n = va_arg(list, double);
-
-	printf("%f", n);
-}
-
-/**
- * print_string - print a string
- *
- * @list: a list of args
- */
-
-void print_string(va_list list)
-{
-	char *str = va_arg(list, char *);
-
-	if (str == NULL)
-	{
-		printf("(nil)");
-	}
-	printf("%s", str);
-}
-
-/**
- * print_all - prints any type
- *
- * @format: arguments to print
- */
+* print_all - a function that prints anything
+*
+* @format: a list of args
+*/
 
 void print_all(const char * const format, ...)
 {
 	va_list list;
-	int i = 0, j = 0;
-	char *separator = "";
-	func_printer funcs[] = {
-		{"c", print_char},
-		{"i", print_int},
-		{"f", print_float},
-		{"s", print_string}
-	};
+	int i = 0, j, k = 0;
+	char *str;
+	const char arg_symbol[] = "cifs";
 
 	va_start(list, format);
 
 	while (format && format[i])
 	{
 		j = 0;
-
-		while (j < 4 && (format[i] != *(funcs[j].symbol)))
-			j++;
-
-		if (j < 4)
+		while (arg_symbol[j])
 		{
-			printf("%s", separator);
-			funcs[j].print_func(list);
-			separator = ", ";
+			if(format[i] == arg_symbol[j] && k)
+			{
+				printf(", ");
+				break;
+			} j++;
 		}
-		i++;
-	}
-	printf("\n");
 
+		switch (format[i])
+		{
+		case 'c':
+			printf("%c", va_arg(list, int)), k = 1;
+			break;
+		case 'i':
+			printf("%d", va_arg(list, int)), k = 1;
+			break;
+		case 'f':
+			printf("%f", va_arg(list, double)), k = 1;
+			break;
+		case 's':
+			str = va_arg(list, char *), k = 1;
+			if (str == NULL)
+			{
+				printf("(nil)");
+				break;
+			}
+			printf("%s", str);
+			break;
+		} i++;
+	}
 	va_end(list);
+	printf("\n");
 }
