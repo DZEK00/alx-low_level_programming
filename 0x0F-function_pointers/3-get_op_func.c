@@ -2,7 +2,13 @@
 #include <stddef.h>
 
 /**
- */ 
+ * get_op_func - selects the correct function to
+ * perform the operation asked by the user.
+ *
+ * @s: input
+ *
+ * Return: one of the operators
+*/ 
 
 int (*get_op_func(char *s))(int, int)
 {
