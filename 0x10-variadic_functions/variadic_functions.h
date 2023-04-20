@@ -15,10 +15,11 @@ void print_all(const char * const format, ...);
  * @print_func: a function pointer that prints
  * a data type according to the symbol
 */
-typedef struct printer
+
+typedef struct print
 {
 	char *symbol;
-	void (*print_func)(va_list);
+	void (*print_func)(va_list arg);
 } func_printer;
 
 #endif

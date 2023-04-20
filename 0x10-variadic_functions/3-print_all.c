@@ -60,7 +60,7 @@ void print_string(va_list list)
 
 /**
  * print_all - prints any type
- * 
+ *
  * @format: arguments to print
  */
 
@@ -69,13 +69,11 @@ void print_all(const char * const format, ...)
 	va_list list;
 	int i = 0, j = 0;
 	char *separator = "";
-
 	func_printer funcs[] = {
 		{"c", print_char},
 		{"i", print_int},
 		{"f", print_float},
-		{"s", print_string},
-		{NULL, NULL}
+		{"s", print_string}
 	};
 
 	va_start(list, format);
@@ -83,48 +81,19 @@ void print_all(const char * const format, ...)
 	while (format && format[i])
 	{
 		j = 0;
-		while (j < 4)
-		{
-			if (*funcs[j].symbol == format[i])
-			{
-				printf("%s", separator);
-				funcs[j].print_func(list);
-				separator = ", ";
-				break;
-			}
+
+		while (j < 4 && (format[i] != *(funcs[j].symbol)))
 			j++;
+
+		if (j < 4)
+		{
+			printf("%s", separator);
+			funcs[j].print_func(list);
+			separator = ", ";
 		}
 		i++;
 	}
-
 	printf("\n");
+
 	va_end(list);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
